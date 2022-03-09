@@ -8,7 +8,7 @@ Python script for a weather data fetch application using OpenWeatherMap API and 
 
 ## How to use
 - Enter the name of the city you wanna fetch weather data of.
-- Wait for the data to load, while you reas through the commands.
+- Wait for the data to load, while you go through the commands.
   
   ### Commands
     Press:
