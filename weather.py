@@ -5,8 +5,9 @@ import requests
 from urllib import response
 
 # API setup
-API_KEY = "4643783a875af031bbfc48ab5ccd541b"
 BASE_URL = "http://api.openweathermap.org/data/2.5/weather/"
+with open('key.txt', 'r') as file:
+    KEY = file.read()
 
 # globals
 ERR = '\nOops! bad gateway, an error occured.'
@@ -34,7 +35,7 @@ def display(city, data):
 
     ris = data['sys']['sunrise']
     set = data['sys']['sunset']
-    tim = f'\nSunrise at {time.strftime("%H:%M", time.localtime(ris))} AM\nSunset at {time.strftime("%H:%M", time.localtime(set))} PM'
+    tim = f'\nSunrise at {time.strftime("%H:%M", time.localtime(ris))} AM IST\nSunset at {time.strftime("%H:%M", time.localtime(set))} PM IST'
     
     def key():
         key_ = input('\n> ')
@@ -77,7 +78,7 @@ def help(city, data):
 # main exe
 def main():
     city = input("\nEnter your city: ")
-    req_url = f'{BASE_URL}?q={city}&appid={API_KEY}'
+    req_url = f'{BASE_URL}?q={city}&appid={KEY}'
 
     fetch = requests.get(req_url)
 
